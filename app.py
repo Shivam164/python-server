@@ -10,8 +10,8 @@ def handleRequest():
     print(body)
     return jsonify({"message": "recieved"}), 200
 
-@app.route("/webhook/:id", methods=["POST", "GET"])
-def handleRequest():
+@app.route("/webhook/<string:id>", methods=["POST", "GET"])
+def handleWebhookRequest():
     print(id)
     body = request.get_json()
     print(body)
